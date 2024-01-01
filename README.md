@@ -19,6 +19,7 @@
       "@/*": ["./src/*"]
     }, 
     `
+- [x] Configuration the `tailwind.config.js`
 
 
 ### Install VS Code Extention
@@ -28,5 +29,3 @@
 -  [ ] Tailwind CSS IntelliSense
 
 
-#### Video
-23:52/4:03:49
