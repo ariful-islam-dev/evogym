@@ -12,7 +12,7 @@
 
 
 ### What Learning
-- [x] Convert to relational path (file:vite.config.js);
+- [x] Convert to relational path (`file:vite.config.js`)
 - [x] Configuration `tsconfig.js` file like 
     `
      "paths": {
@@ -20,6 +20,7 @@
     }, 
     `
 - [x] Configuration the `tailwind.config.js`
+- [ ] Motion for animation
 
 
 ### Install VS Code Extention
