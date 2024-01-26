@@ -20,7 +20,16 @@ const benefits: Array<BenefitType> = [
     title: "Export and Pro Trainers",
     description: "Fasce vestibulum aliquam ut cras. Nisl lectus egestas sapien misl. Lacus at mi sit pellentesque. Congue parturient."
   },
-]
+];
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
 type Props = {
     setSelectedPage: (value: SelectedPage)=>void;
 }
@@ -32,14 +41,28 @@ const Benefits = ({setSelectedPage}: Props) => {
             onViewportEnter={()=>setSelectedPage(SelectedPage.Benefits)}
         >
           {/* Header */}
-            <div className='md:my-5 md:w-3/5'>
+            <motion.div
+             initial="hidden"
+             whileInView="visible" 
+             viewport={{once: true, amount: 0.5 }} 
+             transition={{ duration: 0.5}}
+                variants={{
+                    hidden: {opacity:0, x:-50},
+                    visible: {opacity: 1, x:0}
+                }}
+            className='md:my-5 md:w-3/5'>
              <HText>MORE THAN JUST GYM.</HText>
              <p className='my-5 text-sm'>
               We provide world class fitness equipment, trainers and classes to get you to your ultimate fitness goals with ease. We provide true care into each and every member.
              </p>
-            </div>
+            </motion.div>
             {/* Benefits */}
-            <div className="items-center justify-between gap-8 mt-5 md:flex">
+            <motion.div className="items-center justify-between gap-8 mt-5 md:flex"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{once: true, amount: 0.5}}
+              variants={container}
+            >
               {
                 benefits.map((benefit:BenefitType)=>(
                   <Benefit key={benefit.title} icon={benefit.icon} title={benefit.title} description={benefit.description}
@@ -47,7 +70,31 @@ const Benefits = ({setSelectedPage}: Props) => {
                   />
                 ))
               }
-            </div>
+            </motion.div>
+              {/* GRAPHICS AND DESCRIPTION */}
+              <div> 
+                {/* GRAPHIC */}
+                <img src="" alt="" />
+                {/* DESCRIPTION */}
+                <div>
+                  {/* TITLE */}
+                  <div className="relative">
+                    <div className="before:absolute before:-top-20 before:-top-20 before:-left-20 before:z-[1] before:content-abstracwaves">
+                      <div>
+                        <HText>MILLIONS OF HAPPY MEMBERS GETTING{""}
+                          <span className="text-primary-500">FIT</span>.
+                        </HText>
+                      </div>
+                    </div>
+                  </div>
+                  {/* DESCRIPTION */}
+                  <div>
+                    <p>Nasceture aenean massa auctor tincidunt. laculis potenti amet egestas ultries consectetur adipiscing ultricies enim. Pulvinar fames vitae vitae quis. Quis amet vulputate tincidunt at in nulla nec. Consequat sed facilisis dui sit egestas ultries tellus. Ullamcorper arcu id pretium sapien proin integer nisl. Felis orci diam odio.</p>
+                    <p>Fringilla a sed at suspendiesse ut enim volutpat Rhoncus vel est tellus quam porttitor. Muris velit euismod elementtum arcu neque facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit enim mattis odio in rusus nunc.</p>
+                  </div>
+                  {/* BUTTON */}
+                </div>
+              </div>
         </motion.div>
     </section>
   )
