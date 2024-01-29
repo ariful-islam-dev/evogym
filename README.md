@@ -28,5 +28,8 @@
 -  [ ] Prettier 
 -  [ ] Tailwind Documentation `ctrl+alt+t`
 -  [ ] Tailwind CSS IntelliSense
+  
+### Section Of Application
+- [x] Our Classes
 
 
